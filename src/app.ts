@@ -7,26 +7,39 @@ function showHello(divName: string, name: string) {
 
 // =======================================================
 
+enum Category { 
+  Javascript,
+  CSS,
+  HTML,
+  TypeScript,
+  Angular
+}
+
 function getAllBooks(): object[] {
   let books: Array<object> = [  
     { 
       title: 'Refactoring JavaScript',
       author: 'Evan Burchard',
-      available: true
+      available: true,
+      category: Category.Angular
     },
     { 
       title: 'JavaScript Testing',
       author: 'Liang Yuxian Eugene',
-      available: false
+      available: false,
+      category: Category.CSS
     },
     { 
       title: 'CSS Secrets',
       author: 'Lea Verou',
-      available: true },
+      available: true,
+      category: Category.Javascript
+    },
     { 
       title: 'Mastering JavaScript Object-Oriented Programming',
       author: 'Andrea Chiarelli',
-      available: true
+      available: true,
+      category: Category.HTML
     }
   ];
 
@@ -48,7 +61,28 @@ function logFirstAvailable(books: any[]): void {
   console.log(`first available book title: ${firstAvailableTitle}`);
 }
 
+function getBookTitlesByCategory(category: Category): string[] {
+  const books = getAllBooks();
+  const titles: string[] = [];
+
+  for(const book of books) {
+    if ((<any>book).category == category) {
+      titles.push((<any>book).title);
+    }
+  }
+
+  return titles;
+}
+
+function logBookTitles(titles: Array<string>): void {
+  titles.forEach(title => console.log(title))
+}
+
 // =======================================================
 
 // Task 01
-logFirstAvailable(getAllBooks());
+// logFirstAvailable(getAllBooks());
+
+
+// Task 02
+logBookTitles(getBookTitlesByCategory(Category.Javascript));
