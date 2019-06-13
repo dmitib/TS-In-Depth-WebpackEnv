@@ -50,7 +50,7 @@ function getAllBooks(): any[] {
   return books;
 }
 
-function logFirstAvailable(books: any[]): void {
+function logFirstAvailable(books = getAllBooks()): void {
   const numberOfBooks: number = books.length;
   let firstAvailableTitle: string = '';
 
@@ -65,7 +65,7 @@ function logFirstAvailable(books: any[]): void {
   console.log(`first available book title: ${firstAvailableTitle}`);
 }
 
-function getBookTitlesByCategory(category: Category): string[] {
+function getBookTitlesByCategory(category: Category = Category.Angular): string[] {
   const books = getAllBooks();
   const titles: string[] = [];
 
@@ -82,13 +82,39 @@ function logBookTitles(titles: Array<string>): void {
   titles.forEach(title => console.log(title))
 }
 
-function getBookByID(id: number): object {
+function getBookByID(id: number): any {
   const books = getAllBooks();
   return books.find(book => book.id === id);
 }
 
 function createCustomerID(name: string, id: number): string {
   return `${name}${id}`
+}
+
+function createCustomer(name: string, age?: number, city?: string): void {
+  console.log(`Customer name ${name}`);
+  
+  if (age) {
+    console.log(`Customer age ${age}`);
+  }
+
+  if (city) {
+    console.log(`Customer city ${city}`);
+  }
+}
+
+function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
+  console.log(`Customer name ${customer}`);
+
+  const titles: string[] = [];
+  for (const id of bookIDs) {
+    const book = getBookByID(id);
+    if (book.available) {
+      titles.push(book.title);
+    }
+  }
+
+  return titles;
 }
 
 // =======================================================
@@ -106,10 +132,25 @@ function createCustomerID(name: string, id: number): string {
 // console.log(book);
 
 // Task 04
-let myID: string = createCustomerID('Ann', 10);
-console.log(myID);
-let idGenerator: (name: string, id: number) => string;
-idGenerator = (name: string, id: number) => `${name}${id}`;
-idGenerator = createCustomerID;
-myID = idGenerator('Ann', 100);
-console.log(myID);
+// let myID: string = createCustomerID('Ann', 10);
+// console.log(myID);
+// let idGenerator: (name: string, id: number) => string;
+// idGenerator = (name: string, id: number) => `${name}${id}`;
+// idGenerator = createCustomerID;
+// myID = idGenerator('Ann', 100);
+// console.log(myID);
+
+// Task 05
+// createCustomer('Ann');
+// createCustomer('Ann', 30);
+// createCustomer('Ann', 30, 'Nizhny');
+// createCustomer('Ann', undefined, 'Nizhny');
+// const titles = getBookTitlesByCategory();
+// console.log(titles);
+
+// logFirstAvailable();
+
+let myBooks = checkoutBooks('Ann');
+console.log(myBooks);
+myBooks = checkoutBooks('Ann', 1, 2, 4);
+console.log(myBooks);
