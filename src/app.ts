@@ -117,6 +117,22 @@ function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
   return titles;
 }
 
+function getTitles(author: string): string[]; 
+function getTitles(available: boolean): string[]; 
+function getTitles(bookProperty: any): string[] {
+  const books = getAllBooks();
+  
+  if (typeof bookProperty === 'string') {
+    return books
+      .filter(book => book.author === bookProperty)
+      .map(book => book.title);
+  } else if (typeof bookProperty === 'boolean') {
+    return books
+      .filter(book => book.available === bookProperty)
+      .map(book => book.title);
+  }
+}; 
+
 // =======================================================
 
 // Task 01
@@ -150,7 +166,11 @@ function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
 
 // logFirstAvailable();
 
-let myBooks = checkoutBooks('Ann');
-console.log(myBooks);
-myBooks = checkoutBooks('Ann', 1, 2, 4);
-console.log(myBooks);
+// let myBooks = checkoutBooks('Ann');
+// console.log(myBooks);
+// myBooks = checkoutBooks('Ann', 1, 2, 4);
+// console.log(myBooks);
+
+// Task 06
+const titles = getTitles(false);
+console.log(titles);
