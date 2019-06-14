@@ -1,6 +1,6 @@
 import { Category } from './enums';
-import { Book, Logger, Author, Librarian } from './interfaces';
-import { UniversityLibrarian, ReferenceItem } from './classes';
+import { Book, Logger, Author, Librarian, Magazine } from './interfaces';
+import { UniversityLibrarian, ReferenceItem, Shelf } from './classes';
 import RefBook from './classes/encyclopedia';
 import { purge } from './lib/utility-function';
 
@@ -263,7 +263,24 @@ const inventory: Array<Book> = [
     category: Category.Software
   }
 ];
-let result: any[] = purge<Book>(inventory);
-console.log(result);
-result = purge<number>([1, 2, 3, 4]);
-console.log(result);
+// let result: any[] = purge<Book>(inventory);
+// console.log(result);
+// result = purge<number>([1, 2, 3, 4]);
+// console.log(result);
+
+// Task 19
+const bookShelf: Shelf<Book> = new Shelf<Book>();
+inventory.forEach(book => bookShelf.add(book));
+const firstBook: Book = bookShelf.getFirst();
+console.log(firstBook);
+
+const magazines: Array<Magazine> = [
+  { title: 'Programming Language Monthly', publisher: 'Code Mags' },
+  { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
+  { title: 'Five Points', publisher: 'GSU' }
+];
+
+const magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+magazines.forEach(mag => magazineShelf.add(mag));
+const firstMag: Magazine = magazineShelf.getFirst();
+console.log(firstMag);
