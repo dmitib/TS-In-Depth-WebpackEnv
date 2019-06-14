@@ -15,6 +15,10 @@ enum Category {
   Angular
 }
 
+interface DamageLogger {
+  (reason: string): void
+}
+
 interface Book {
   id: number;
   title: string;
@@ -22,7 +26,7 @@ interface Book {
   available: boolean;
   category: Category;
   pages?: number;
-  markDamaged?: (reason: string) => void;
+  markDamaged?: DamageLogger;
 }
 
 function getAllBooks(): Book[] {
@@ -191,14 +195,18 @@ function printBook(book: Book): void {
 
 // Task 07
 // printBook(getBookByID(1));
-const myBook: Book = {
-  id: 5,
-  title: 'Colors, Backgrounds, and Gradients',
-  author: 'Eric A. Meyer',
-  available: true,
-  category: Category.CSS,
-  pages: 200,
-  markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
-};
-printBook(myBook);
-myBook.markDamaged(`missing back cover`);
+// const myBook: Book = {
+//   id: 5,
+//   title: 'Colors, Backgrounds, and Gradients',
+//   author: 'Eric A. Meyer',
+//   available: true,
+//   category: Category.CSS,
+//   pages: 200,
+//   markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+// };
+// printBook(myBook);
+// myBook.markDamaged(`missing back cover`);
+
+// Task 08
+const logDamage: DamageLogger = (reason: string) => console.log(`Damaged: ${reason}`);
+logDamage(`missing back cover`);
