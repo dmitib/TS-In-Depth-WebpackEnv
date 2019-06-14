@@ -15,8 +15,18 @@ enum Category {
   Angular
 }
 
-function getAllBooks(): any[] {
-  let books: Array<object> = [  
+interface Book {
+  id: number;
+  title: string;
+  author: string;
+  available: boolean;
+  category: Category;
+  pages?: number;
+  markDamaged?: (reason: string) => void;
+}
+
+function getAllBooks(): Book[] {
+  let books: Array<Book> = [  
     {
       id: 1,
       title: 'Refactoring JavaScript',
@@ -82,7 +92,7 @@ function logBookTitles(titles: Array<string>): void {
   titles.forEach(title => console.log(title))
 }
 
-function getBookByID(id: number): any {
+function getBookByID(id: number): Book | undefined {
   const books = getAllBooks();
   return books.find(book => book.id === id);
 }
@@ -131,7 +141,11 @@ function getTitles(bookProperty: any): string[] {
       .filter(book => book.available === bookProperty)
       .map(book => book.title);
   }
-}; 
+};
+
+function printBook(book: Book): void {
+  console.log(`${book.title} by ${book.author}`);
+}
 
 // =======================================================
 
@@ -172,5 +186,19 @@ function getTitles(bookProperty: any): string[] {
 // console.log(myBooks);
 
 // Task 06
-const titles = getTitles(false);
-console.log(titles);
+// const titles = getTitles(false);
+// console.log(titles);
+
+// Task 07
+// printBook(getBookByID(1));
+const myBook: Book = {
+  id: 5,
+  title: 'Colors, Backgrounds, and Gradients',
+  author: 'Eric A. Meyer',
+  available: true,
+  category: Category.CSS,
+  pages: 200,
+  markDamaged: (reason: string) => console.log(`Damaged: ${reason}`)
+};
+printBook(myBook);
+myBook.markDamaged(`missing back cover`);
