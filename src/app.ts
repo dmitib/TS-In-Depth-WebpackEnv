@@ -1,6 +1,7 @@
 import { Category } from './enums';
 import { Book, Logger, Author, Librarian } from './interfaces';
 import { UniversityLibrarian, ReferenceItem } from './classes';
+import RefBook from './classes/encyclopedia';
 
 showHello('greeting', 'TypeScript');
 
@@ -133,21 +134,6 @@ function printBook(book: Book): void {
   console.log(`${book.title} by ${book.author}`);
 }
 
-class Encyclopedia extends ReferenceItem {
-  constructor(newTitle: string, newYear: number, public edition: number) {
-    super(newTitle, newYear);
-  }
-
-  printItem() {
-    super.printItem();
-    console.log(`Edition: ${this.edition} (${this.year})`);
-  }
-
-  printCitation(): void {
-    console.log(`${this.title} - ${this.year}`);
-  }
-}
-
 // =======================================================
 
 // Task 01
@@ -239,3 +225,8 @@ class Encyclopedia extends ReferenceItem {
 // refBook.printItem();
 // refBook.printCitation();
 
+// Task 16
+const refBook: RefBook = new RefBook('My Title', 2019, 10);
+console.log(refBook);
+refBook.printItem();
+refBook.printCitation();
