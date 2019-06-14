@@ -2,6 +2,7 @@ import { Category } from './enums';
 import { Book, Logger, Author, Librarian } from './interfaces';
 import { UniversityLibrarian, ReferenceItem } from './classes';
 import RefBook from './classes/encyclopedia';
+import { purge } from './lib/utility-function';
 
 showHello('greeting', 'TypeScript');
 
@@ -226,7 +227,43 @@ function printBook(book: Book): void {
 // refBook.printCitation();
 
 // Task 16
-const refBook: RefBook = new RefBook('My Title', 2019, 10);
-console.log(refBook);
-refBook.printItem();
-refBook.printCitation();
+// const refBook: RefBook = new RefBook('My Title', 2019, 10);
+// console.log(refBook);
+// refBook.printItem();
+// refBook.printCitation();
+
+// Task 18
+const inventory: Array<Book> = [
+  {
+    id: 10,
+    title: 'The C Programming Language',
+    author: 'K & R',
+    available: true,
+    category: Category.Software
+  },
+  {
+    id: 11,
+    title: 'Code Complete',
+    author: 'Steve McConnell',
+    available: true,
+    category: Category.Software
+  },
+  {
+    id: 12,
+    title: '8-Bit Graphics with Cobol',
+    author: 'A. B.',
+    available: true,
+    category: Category.Software
+  },
+  {
+    id: 13,
+    title: 'Cool autoexec.bat Scripts!',
+    author: 'C. D.',
+    available: true,
+    category: Category.Software
+  }
+];
+let result: any[] = purge<Book>(inventory);
+console.log(result);
+result = purge<number>([1, 2, 3, 4]);
+console.log(result);
