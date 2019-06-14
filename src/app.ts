@@ -175,6 +175,39 @@ class UniversityLibrarian implements Librarian {
   }
 }
 
+class ReferenceItem {
+  // title: string;
+  // year: number;
+
+  // constructor(newTitle: string, newYear: number) {
+  //   console.log(`Creating a new ReferenceItem...`);
+  //   this.title = newTitle;
+  //   this.year = newYear;
+  // }
+
+  private _publisher: string;
+
+  static department: string = 'Fiction';
+
+  constructor(public title: string, private year: number) {
+    console.log(`Creating a new ReferenceItem...`);
+  }
+
+  get publisher(): string {
+    return this._publisher.toUpperCase();
+  }
+
+  set publisher(newPublisher: string) {
+    this._publisher = newPublisher;
+  }
+
+  printItem(): void {
+    console.log(`${this.title} was published in ${this.year}`);
+    console.log(ReferenceItem.department);
+    
+  }
+}
+
 // =======================================================
 
 // Task 01
@@ -250,6 +283,12 @@ class UniversityLibrarian implements Librarian {
 // }
 
 // Task 10
-const favoriteLibrarian: Librarian = new UniversityLibrarian();
-favoriteLibrarian.name = 'Anna';
-favoriteLibrarian.assistCustomer('Boris');
+// const favoriteLibrarian: Librarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Anna';
+// favoriteLibrarian.assistCustomer('Boris');
+
+// Task 11
+const ref: ReferenceItem = new ReferenceItem('Title', 2019);
+ref.printItem();
+ref.publisher = 'Anna';
+console.log(ref.publisher);
