@@ -1,0 +1,82 @@
+{
+  "program": {
+    "fileInfos": {
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts": {
+        "version": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0",
+        "signature": "49ff9798f592c8b7e628fd881401e68810c1b3589ecd7a41b32b3c287374cde0"
+      },
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts": {
+        "version": "c8665e66018917580e71792b91022bcaf53fb946fab4aaf8dfb0738ed564db88",
+        "signature": "c8665e66018917580e71792b91022bcaf53fb946fab4aaf8dfb0738ed564db88"
+      },
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts": {
+        "version": "6994c583b66862deca24d7bbf77297d95b9d3da8160dbd9beef6b847cf7c1376",
+        "signature": "6994c583b66862deca24d7bbf77297d95b9d3da8160dbd9beef6b847cf7c1376"
+      },
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts": {
+        "version": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b",
+        "signature": "fe4e59403e34c7ff747abe4ff6abbc7718229556d7c1a5b93473fb53156c913b"
+      },
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts": {
+        "version": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9",
+        "signature": "b9faa17292f17d2ad75e34fac77dd63a6403af1dba02d39cd0cbb9ffdf3de8b9"
+      },
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/utility-function.ts": {
+        "version": "e870c5d39365431731cf918452b9dd68fc279d6fb3f2845b69bf5f1a02fb053c",
+        "signature": "35f9c820555a37ff4cb761db7c62b945e37cd85487ef2952aa01bcca6c515ea0"
+      },
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/app.ts": {
+        "version": "84a3d1a2a38e7ea866924543db67e7be8fb3eb9a76944d4499e97b80f40d112b",
+        "signature": "aa39bbd7cfb8a93ef7fb328296f6b942dd15ee1eacf38a71d36a4d727cc47856"
+      },
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/src/app.ts": {
+        "version": "5896d581d3f591888270416a88071a3f34b5c058afad7cd8ac8ea046160c8086",
+        "signature": "035f12c8654e8a27ee9de9e0cb4acf2159d0a639b7fad4dea876be55ae7d93c5"
+      }
+    },
+    "options": {
+      "target": 1,
+      "module": 1,
+      "moduleResolution": 2,
+      "sourceMap": true,
+      "emitDecoratorMetadata": true,
+      "experimentalDecorators": true,
+      "removeComments": false,
+      "noImplicitAny": false,
+      "strictNullChecks": false,
+      "outDir": "C:/projects/EPAM_mentoring/VZhyrytskiy/TypeScript-In-Depth/TypeScript-In-Depth-DZ/TS-In-Depth-WebpackEnv/dist",
+      "incremental": true,
+      "tsBuildInfoFile": "C:/projects/EPAM_mentoring/VZhyrytskiy/TypeScript-In-Depth/TypeScript-In-Depth-DZ/TS-In-Depth-WebpackEnv/buildcache",
+      "configFilePath": "C:/projects/EPAM_mentoring/VZhyrytskiy/TypeScript-In-Depth/TypeScript-In-Depth-DZ/TS-In-Depth-WebpackEnv/tsconfig.json"
+    },
+    "referencedMap": {
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/app.ts": [
+        "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/utility-function.ts"
+      ]
+    },
+    "exportedModulesMap": {},
+    "semanticDiagnosticsPerFile": [
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.d.ts",
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.es5.d.ts",
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.dom.d.ts",
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.webworker.importscripts.d.ts",
+      "c:/users/dmitrii_gushchin/appdata/roaming/npm/node_modules/typescript/lib/lib.scripthost.d.ts",
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/utility-function.ts",
+      "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/namespacedemo/app.ts",
+      [
+        "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/src/app.ts",
+        [
+          {
+            "file": "c:/projects/epam_mentoring/vzhyrytskiy/typescript-in-depth/typescript-in-depth-dz/ts-in-depth-webpackenv/src/app.ts",
+            "start": 2341,
+            "length": 4,
+            "code": 2339,
+            "category": 1,
+            "messageText": "Property 'find' does not exist on type 'Book[]'."
+          }
+        ]
+      ]
+    ]
+  },
+  "version": "3.4.4"
+}

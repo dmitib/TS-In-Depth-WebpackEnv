@@ -310,8 +310,8 @@ class Encyclopedia extends ReferenceItem {
 // console.log(ref.publisher);
 
 // Task 12, 13
-const refBook: Encyclopedia = new Encyclopedia('My Title', 2019, 10);
+// const refBook: Encyclopedia = new Encyclopedia('My Title', 2019, 10);
 // console.log(refBook);
 // refBook.printItem();
-refBook.printCitation();
+// refBook.printCitation();
 
