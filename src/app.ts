@@ -165,6 +165,16 @@ function printBook(book: Book): void {
   console.log(`${book.title} by ${book.author}`);
 }
 
+class UniversityLibrarian implements Librarian {
+  name: string;
+  email: string;
+  departmant: string;
+
+  assistCustomer(custName: string): void {
+    console.log(`${this.name} is assisting ${custName}`);
+  }
+}
+
 // =======================================================
 
 // Task 01
@@ -226,15 +236,20 @@ function printBook(book: Book): void {
 // logDamage(`missing back cover`);
 
 // Task 09
-const favoriteAuthor: Author = {
-  email: 'anna@example.com',
-  name: 'Anna',
-  numBooksPublished: 2
-}
+// const favoriteAuthor: Author = {
+//   email: 'anna@example.com',
+//   name: 'Anna',
+//   numBooksPublished: 2
+// }
 
-const favoriteLibrarian: Librarian = {
-  email: 'anna@example.com',
-  name: 'Anna',
-  departmant: 'Classical Literature',
-  assistCustomer: (name: string) => console.log(name)
-}
+// const favoriteLibrarian: Librarian = {
+//   email: 'anna@example.com',
+//   name: 'Anna',
+//   departmant: 'Classical Literature',
+//   assistCustomer: (name: string) => console.log(name)
+// }
+
+// Task 10
+const favoriteLibrarian: Librarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Anna';
+favoriteLibrarian.assistCustomer('Boris');
