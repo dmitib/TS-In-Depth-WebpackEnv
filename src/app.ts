@@ -209,10 +209,12 @@ function printBook(book: Book): void {
 //   assistCustomer: (name: string) => console.log(name)
 // }
 
-// Task 10
-// const favoriteLibrarian: Librarian = new UniversityLibrarian();
-// favoriteLibrarian.name = 'Anna';
-// favoriteLibrarian.assistCustomer('Boris');
+// Task 10, 21, 22
+const favoriteLibrarian: Librarian = new UniversityLibrarian();
+favoriteLibrarian.name = 'Anna';
+favoriteLibrarian.assistCustomer('Boris');
+// 22
+favoriteLibrarian.printLibrarian();
 
 // Task 11
 // const ref: ReferenceItem = new ReferenceItem('Title', 2019);
@@ -233,36 +235,36 @@ function printBook(book: Book): void {
 // refBook.printCitation();
 
 // Task 18
-const inventory: Array<Book> = [
-  {
-    id: 10,
-    title: 'The C Programming Language',
-    author: 'K & R',
-    available: true,
-    category: Category.Software
-  },
-  {
-    id: 11,
-    title: 'Code Complete',
-    author: 'Steve McConnell',
-    available: true,
-    category: Category.Software
-  },
-  {
-    id: 12,
-    title: '8-Bit Graphics with Cobol',
-    author: 'A. B.',
-    available: true,
-    category: Category.Software
-  },
-  {
-    id: 13,
-    title: 'Cool autoexec.bat Scripts!',
-    author: 'C. D.',
-    available: true,
-    category: Category.Software
-  }
-];
+// const inventory: Array<Book> = [
+//   {
+//     id: 10,
+//     title: 'The C Programming Language',
+//     author: 'K & R',
+//     available: true,
+//     category: Category.Software
+//   },
+//   {
+//     id: 11,
+//     title: 'Code Complete',
+//     author: 'Steve McConnell',
+//     available: true,
+//     category: Category.Software
+//   },
+//   {
+//     id: 12,
+//     title: '8-Bit Graphics with Cobol',
+//     author: 'A. B.',
+//     available: true,
+//     category: Category.Software
+//   },
+//   {
+//     id: 13,
+//     title: 'Cool autoexec.bat Scripts!',
+//     author: 'C. D.',
+//     available: true,
+//     category: Category.Software
+//   }
+// ];
 // let result: any[] = purge<Book>(inventory);
 // console.log(result);
 // result = purge<number>([1, 2, 3, 4]);
@@ -274,18 +276,19 @@ const inventory: Array<Book> = [
 // const firstBook: Book = bookShelf.getFirst();
 // console.log(firstBook);
 
-const magazines: Array<Magazine> = [
-  { title: 'Programming Language Monthly', publisher: 'Code Mags' },
-  { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
-  { title: 'Five Points', publisher: 'GSU' }
-];
+// const magazines: Array<Magazine> = [
+//   { title: 'Programming Language Monthly', publisher: 'Code Mags' },
+//   { title: 'Literary Fiction Quarterly', publisher: 'College Press' },
+//   { title: 'Five Points', publisher: 'GSU' }
+// ];
 
-const magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
-magazines.forEach(mag => magazineShelf.add(mag));
+// const magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
+// magazines.forEach(mag => magazineShelf.add(mag));
 // const firstMag: Magazine = magazineShelf.getFirst();
 // console.log(firstMag);
 
 // Task 20
-magazineShelf.printTitles();
-const o = magazineShelf.find(`Five Points`);
-console.log(o);
+// magazineShelf.printTitles();
+// const o = magazineShelf.find(`Five Points`);
+// console.log(o);
+

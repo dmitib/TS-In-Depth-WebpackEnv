@@ -26,6 +26,7 @@ interface Author extends Person {
 interface Librarian extends Person {
   departmant: string;
   assistCustomer: (custName: string) => void;
+  printLibrarian?: () => void;
 }
 
 interface Magazine {
