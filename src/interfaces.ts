@@ -33,10 +33,15 @@ interface Magazine {
   publisher: string;
 }
 
+interface ShelfItem {
+  title: string;
+}
+
 export {
   DamageLogger as Logger,
   Book,
   Author,
   Librarian,
-  Magazine
+  Magazine,
+  ShelfItem
 };

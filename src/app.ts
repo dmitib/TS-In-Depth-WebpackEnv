@@ -269,10 +269,10 @@ const inventory: Array<Book> = [
 // console.log(result);
 
 // Task 19
-const bookShelf: Shelf<Book> = new Shelf<Book>();
-inventory.forEach(book => bookShelf.add(book));
-const firstBook: Book = bookShelf.getFirst();
-console.log(firstBook);
+// const bookShelf: Shelf<Book> = new Shelf<Book>();
+// inventory.forEach(book => bookShelf.add(book));
+// const firstBook: Book = bookShelf.getFirst();
+// console.log(firstBook);
 
 const magazines: Array<Magazine> = [
   { title: 'Programming Language Monthly', publisher: 'Code Mags' },
@@ -282,5 +282,10 @@ const magazines: Array<Magazine> = [
 
 const magazineShelf: Shelf<Magazine> = new Shelf<Magazine>();
 magazines.forEach(mag => magazineShelf.add(mag));
-const firstMag: Magazine = magazineShelf.getFirst();
-console.log(firstMag);
+// const firstMag: Magazine = magazineShelf.getFirst();
+// console.log(firstMag);
+
+// Task 20
+magazineShelf.printTitles();
+const o = magazineShelf.find(`Five Points`);
+console.log(o);
