@@ -210,11 +210,11 @@ function printBook(book: Book): void {
 // }
 
 // Task 10, 21, 22
-const favoriteLibrarian: Librarian = new UniversityLibrarian();
-favoriteLibrarian.name = 'Anna';
-favoriteLibrarian.assistCustomer('Boris');
+// const favoriteLibrarian: Librarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Anna';
+// favoriteLibrarian.assistCustomer('Boris');
 // 22
-favoriteLibrarian.printLibrarian();
+// favoriteLibrarian.printLibrarian();
 
 // Task 11
 // const ref: ReferenceItem = new ReferenceItem('Title', 2019);
@@ -292,3 +292,13 @@ favoriteLibrarian.printLibrarian();
 // const o = magazineShelf.find(`Five Points`);
 // console.log(o);
 
+// Task 23
+// const favoriteLibrarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Anna';
+// favoriteLibrarian.assistFaculty = () => console.log('Changed 1');
+// favoriteLibrarian.assistFaculty();
+// favoriteLibrarian.teachCommunity = () => console.log('Changed 2');
+
+// Task 24
+const refBook: RefBook = new RefBook('My Title', 2019, 10);
+refBook.printItem();
