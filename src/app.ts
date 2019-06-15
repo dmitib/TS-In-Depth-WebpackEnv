@@ -300,10 +300,10 @@ function printBook(book: Book): void {
 // favoriteLibrarian.teachCommunity = () => console.log('Changed 2');
 
 // Task 24
-const refBook: RefBook = new RefBook('My Title', 2019, 10);
-refBook.printItem();
+// const refBook: RefBook = new RefBook('My Title', 2019, 10);
+// refBook.printItem();
 
-// Task 25
+// Task 25, 26
 const favoriteLibrarian = new UniversityLibrarian();
 favoriteLibrarian.name = 'Anna';
 favoriteLibrarian.assistCustomer('Boris');

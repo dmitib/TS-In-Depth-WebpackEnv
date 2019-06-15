@@ -1,10 +1,10 @@
 import * as Interfaces from '../interfaces';
-import { sealed, logger, writable, logParameter, logMethod } from './../decorators';
+import { sealed, logger, writable, logParameter, logMethod, format } from './../decorators';
 
 @logger
 @sealed('UniversityLibrarian')
 export class UniversityLibrarian implements Interfaces.Librarian {
-  name: string;
+  @format() name: string;
   email: string;
   departmant: string;
 
