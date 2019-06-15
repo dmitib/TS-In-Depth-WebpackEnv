@@ -304,6 +304,13 @@ function printBook(book: Book): void {
 // refBook.printItem();
 
 // Task 25, 26
-const favoriteLibrarian = new UniversityLibrarian();
-favoriteLibrarian.name = 'Anna';
-favoriteLibrarian.assistCustomer('Boris');
+// const favoriteLibrarian = new UniversityLibrarian();
+// favoriteLibrarian.name = 'Anna';
+// favoriteLibrarian.assistCustomer('Boris');
+
+// Task 27
+const refBook: RefBook = new RefBook('My Title', 2019, 10);
+console.log(refBook);
+refBook.copies = 5;
+refBook.copies = -10;
+console.log(refBook);
