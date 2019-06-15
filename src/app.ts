@@ -16,7 +16,8 @@ import {
   printBook,
   logCategorySearch,
   getBooksByCategory,
-  getBooksByCategoryPromise
+  getBooksByCategoryPromise,
+  logSearchResults
 } from './lib/utility-function';
 
 showHello('greeting', 'TypeScript');
@@ -217,18 +218,24 @@ function showHello(divName: string, name: string) {
 // console.log('Finish');
 
 // Task 29
-console.log('Start');
-getBooksByCategoryPromise(Category.Javascript)
-  .then(titles => {
-    console.log(titles);
-    // return titles.length;
-    throw new Error('!!')
-  })
-  .then(count => console.log(count))
-  .catch(err => console.log(err))
-  .finally(() => console.log('Complete'));
-getBooksByCategoryPromise(Category.Software)
-  .then(titles => console.log(titles))
-  .catch(err => console.log(err))
-  .finally(() => console.log('Complete'));
-console.log('Finish');
+// console.log('Start');
+// getBooksByCategoryPromise(Category.Javascript)
+//   .then(titles => {
+//     console.log(titles);
+//     // return titles.length;
+//     throw new Error('!!')
+//   })
+//   .then(count => console.log(count))
+//   .catch(err => console.log(err))
+//   .finally(() => console.log('Complete'));
+// getBooksByCategoryPromise(Category.Software)
+//   .then(titles => console.log(titles))
+//   .catch(err => console.log(err))
+//   .finally(() => console.log('Complete'));
+// console.log('Finish');
+
+// Task 30
+console.log('Beginning search...');
+logSearchResults(Category.Javascript)
+  .catch(reason => console.log(reason));
+console.log('Search submitted...');
