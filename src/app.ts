@@ -2,7 +2,21 @@ import { Category } from './enums';
 import { Book, Logger, Author, Librarian, Magazine } from './interfaces';
 import { UniversityLibrarian, ReferenceItem, Shelf } from './classes';
 import RefBook from './classes/encyclopedia';
-import { purge } from './lib/utility-function';
+import {
+  purge,
+  getAllBooks,
+  logFirstAvailable,
+  getBookTitlesByCategory,
+  logBookTitles,
+  getBookByID,
+  createCustomerID,
+  createCustomer,
+  checkoutBooks,
+  getTitles,
+  printBook,
+  logCategorySearch,
+  getBooksByCategory
+} from './lib/utility-function';
 
 showHello('greeting', 'TypeScript');
 
@@ -13,127 +27,7 @@ function showHello(divName: string, name: string) {
 
 // =======================================================
 
-function getAllBooks(): Book[] {
-  let books: Array<Book> = [
-    {
-      id: 1,
-      title: 'Refactoring JavaScript',
-      author: 'Evan Burchard',
-      available: true,
-      category: Category.Angular
-    },
-    {
-      id: 2,
-      title: 'JavaScript Testing',
-      author: 'Liang Yuxian Eugene',
-      available: false,
-      category: Category.CSS
-    },
-    {
-      id: 3,
-      title: 'CSS Secrets',
-      author: 'Lea Verou',
-      available: true,
-      category: Category.Javascript
-    },
-    {
-      id: 4,
-      title: 'Mastering JavaScript Object-Oriented Programming',
-      author: 'Andrea Chiarelli',
-      available: true,
-      category: Category.HTML
-    }
-  ];
 
-  return books;
-}
-
-function logFirstAvailable(books = getAllBooks()): void {
-  const numberOfBooks: number = books.length;
-  let firstAvailableTitle: string = '';
-
-  for(const book of books) {
-    if (book.available) {
-      firstAvailableTitle = book.title;
-      break;
-    }
-  }
-
-  console.log(`total books: ${numberOfBooks}`);
-  console.log(`first available book title: ${firstAvailableTitle}`);
-}
-
-function getBookTitlesByCategory(category: Category = Category.Angular): string[] {
-  const books = getAllBooks();
-  const titles: string[] = [];
-
-  for(const book of books) {
-    if ((<any>book).category == category) {
-      titles.push((<any>book).title);
-    }
-  }
-
-  return titles;
-}
-
-function logBookTitles(titles: Array<string>): void {
-  titles.forEach(title => console.log(title))
-}
-
-function getBookByID(id: number): Book | undefined {
-  const books = getAllBooks();
-  return books.find(book => book.id === id);
-}
-
-function createCustomerID(name: string, id: number): string {
-  return `${name}${id}`
-}
-
-function createCustomer(name: string, age?: number, city?: string): void {
-  console.log(`Customer name ${name}`);
-
-  if (age) {
-    console.log(`Customer age ${age}`);
-  }
-
-  if (city) {
-    console.log(`Customer city ${city}`);
-  }
-}
-
-function checkoutBooks(customer: string, ...bookIDs: number[]): string[] {
-  console.log(`Customer name ${customer}`);
-
-  const titles: string[] = [];
-  for (const id of bookIDs) {
-    const book = getBookByID(id);
-    if (book.available) {
-      titles.push(book.title);
-    }
-  }
-
-  return titles;
-}
-
-function getTitles(author: string): string[];
-function getTitles(available: boolean): string[];
-function getTitles(bookProperty: any): string[] {
-  const books = getAllBooks();
-
-  if (typeof bookProperty === 'string') {
-    return books
-      .filter(book => book.author === bookProperty)
-      .map(book => book.title);
-  } else if (typeof bookProperty === 'boolean') {
-    return books
-      .filter(book => book.available === bookProperty)
-      .map(book => book.title);
-  }
-};
-
-function printBook(book: Book): void {
-  console.log(`${book.title} by ${book.author}`);
-}
 
 // =======================================================
 
@@ -309,8 +203,14 @@ function printBook(book: Book): void {
 // favoriteLibrarian.assistCustomer('Boris');
 
 // Task 27
-const refBook: RefBook = new RefBook('My Title', 2019, 10);
-console.log(refBook);
-refBook.copies = 5;
-refBook.copies = -10;
-console.log(refBook);
+// const refBook: RefBook = new RefBook('My Title', 2019, 10);
+// console.log(refBook);
+// refBook.copies = 5;
+// refBook.copies = -10;
+// console.log(refBook);
+
+// Task 28
+console.log('Start');
+getBooksByCategory(Category.Javascript, logCategorySearch);
+getBooksByCategory(Category.Software, logCategorySearch);
+console.log('Finish');
