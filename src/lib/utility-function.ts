@@ -150,3 +150,19 @@ export function logCategorySearch(err: Error, titles: string[]): void {
     console.log(titles);
   }
 }
+
+export function getBooksByCategoryPromise(category: Category): Promise<string[]> {
+  const p: Promise<string[]> = new Promise((resolve, reject) => {
+    setTimeout(() => {
+      const titles: string[] = getBookTitlesByCategory(category);
+
+      if (titles.length > 0) {
+        resolve(titles);
+      } else {
+        reject('No Titles Found');
+      }
+    }, 2000);
+  });
+
+  return p;
+}
