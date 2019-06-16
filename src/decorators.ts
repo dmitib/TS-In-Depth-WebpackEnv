@@ -127,6 +127,17 @@ export function format(pref: string = 'Mr./Mrs.') {
   }
 }
 
+export function formatEmail(pref: string = 'Emails: ') {
+  return function(target: Object, propertyName: string) {
+    makeProperty(
+      target,
+      propertyName,
+      value => `${pref} ${value}`,
+      value => value
+    )
+  }
+}
+
 export function positiveInteger(
   target: Object,
   propertyName: string,

@@ -235,7 +235,12 @@ function showHello(divName: string, name: string) {
 // console.log('Finish');
 
 // Task 30
-console.log('Beginning search...');
-logSearchResults(Category.Javascript)
-  .catch(reason => console.log(reason));
-console.log('Search submitted...');
+// console.log('Beginning search...');
+// logSearchResults(Category.Javascript)
+//   .catch(reason => console.log(reason));
+// console.log('Search submitted...');
+
+// Task 31
+const favoriteLibrarian = new UniversityLibrarian();
+favoriteLibrarian.email = 'Anna@example.com';
+favoriteLibrarian.assistCustomerEmail('Boris@example.com');
